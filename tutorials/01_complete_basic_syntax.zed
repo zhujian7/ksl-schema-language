@@ -1,10 +1,10 @@
 definition learning/document {
 	permission approver = t_approver
 	relation t_approver: learning/user
-	permission can_approve = approver & owner
-	permission can_delete = owner - reviewer
+	permission can_approve = (approver & owner)
+	permission can_delete = (owner - reviewer)
 	permission can_edit = owner + editor
-	permission can_publish = owner + editor & approver
+	permission can_publish = (owner + editor & approver)
 	permission can_read = owner
 	permission can_view = owner + editor + reviewer
 	permission editor = t_editor

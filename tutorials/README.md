@@ -13,11 +13,11 @@ Learn **ALL KSL syntax** with just 4 files! Each file teaches unique concepts wi
 - **Teaches**: Nested relations, imports, cross-namespace references
 
 ### **File 3: Extension System** (10 min)
-- `03_extension_system.ksl` + `03_extension_usage.ksl` → `03_complete_extensions.zed`
+- `rbac_foundation.ksl` + `03_extension_usage.ksl` → `03_complete_extensions.zed`
 - **Teaches**: Templates, dynamic generation, `${variables}`, extension usage
 
 ### **File 4: Real-World Complete Example** (bonus)
-- `04_complete_real_world.ksl` → `04_complete_real_world.zed`
+- `rbac_foundation.ksl` + `04_complete_real_world.ksl` → `04_complete_real_world.zed`
 - **Teaches**: Everything combined in a practical enterprise scenario
 
 ## 🎯 What Each File Covers
@@ -36,11 +36,17 @@ Learn **ALL KSL syntax** with just 4 files! Each file teaches unique concepts wi
 ## 🚀 Quick Compilation
 
 ```bash
-# Single file
-../bin/ksl -o output.zed input.ksl
+# Tutorial 1 (single file)
+../bin/ksl -o 01_complete_basic_syntax.zed 01_complete_basic_syntax.ksl
 
-# Multiple files
-../bin/ksl -o output.zed input1.ksl input2.ksl
+# Tutorial 2 (multiple source files)
+../bin/ksl -o 02_advanced_and_cross_namespace.zed 02_advanced_relations.ksl 02_cross_namespace.ksl
+
+# Tutorial 3 (extension system)
+../bin/ksl -o 03_complete_extensions.zed rbac_foundation.ksl 03_extension_usage.ksl
+
+# Tutorial 4 (real-world example using shared RBAC foundation)
+../bin/ksl -o 04_complete_real_world.zed rbac_foundation.ksl 04_complete_real_world.ksl
 
 # All examples already compiled - just read the .zed files!
 ```
@@ -52,8 +58,6 @@ Learn **ALL KSL syntax** with just 4 files! Each file teaches unique concepts wi
 
 **Cardinality Deep-Dive:**
 - `cardinality_explained.md` - When to use each cardinality type
-- `practical_scenarios.md` - Real-world usage patterns
-- `validation_example.md` - How to implement constraints in your app
 
 ## ✅ After Reading These 4 Files You'll Know:
 

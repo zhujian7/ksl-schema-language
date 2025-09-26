@@ -30,9 +30,9 @@ definition rbac/role {
 definition rbac/role_binding {
 	permission granted = t_granted
 	relation t_granted: rbac/role
-	permission servers_delete = subject & t_granted->servers_delete + t_granted->global_all_permissions + t_granted->mod_inventory_type_server_all + t_granted->mod_inventory_all_rel_can_delete
-	permission servers_read = subject & t_granted->servers_read + t_granted->global_all_permissions + t_granted->mod_inventory_type_server_all + t_granted->mod_inventory_all_rel_can_read
-	permission servers_write = subject & t_granted->servers_write + t_granted->global_all_permissions + t_granted->mod_inventory_type_server_all + t_granted->mod_inventory_all_rel_can_write
+	permission servers_delete = (subject & t_granted->servers_delete + t_granted->global_all_permissions + t_granted->mod_inventory_type_server_all + t_granted->mod_inventory_all_rel_can_delete)
+	permission servers_read = (subject & t_granted->servers_read + t_granted->global_all_permissions + t_granted->mod_inventory_type_server_all + t_granted->mod_inventory_all_rel_can_read)
+	permission servers_write = (subject & t_granted->servers_write + t_granted->global_all_permissions + t_granted->mod_inventory_type_server_all + t_granted->mod_inventory_all_rel_can_write)
 	permission subject = t_subject
 	relation t_subject: rbac/user
 }
